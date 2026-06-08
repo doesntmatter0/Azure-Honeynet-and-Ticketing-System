@@ -69,6 +69,7 @@ Virtualization: VirtualBox, Microsoft Azure
       Phase 2 finished on 6/8/26
 
   Phase 3 - Service Now integration
+---
 
 **Rules and Queries**
 **KQL Rules (Microsoft Sentinel)**
@@ -109,9 +110,9 @@ failedLogins
 | join kind=inner successLogins on Account, Computer
 | project TimeGenerated, Computer, Account, IpAddress, FailCount
 ```
-_**ADDED SEVERAL PRE-CONFIGURED RULES FROM SENTINEL TO INCREASE MITRE ATT&CK MAP COVERAGE**
+**ADDED SEVERAL PRE-CONFIGURED RULES FROM SENTINEL TO INCREASE MITRE ATT&CK MAP COVERAGE**
 
-
+---
 SPL Rules (Splunk)
 
 **Windows Failed Logins (T1110)**
@@ -147,7 +148,7 @@ index=main sourcetype="linux_audit" type=EXECVE
 | table _time, host, comm, exe
 | sort -_time
 ```
-
+---
  **Key Finds**
 - Successfully detected simulated brute force attacks across both 
   Windows and Linux honeypots
@@ -157,5 +158,5 @@ index=main sourcetype="linux_audit" type=EXECVE
   ATT&CK tactic tagging
 - Built detection coverage across Credential Access, Persistence, 
   Privilege Escalation, and Defense Evasion tactics
-
+---
   *Currently studying: CompTIA Security+ | AZ-900*
